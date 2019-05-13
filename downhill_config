@@ -1,0 +1,8 @@
+1000
+8
+10e-8
+/global/cscratch1/sd/zhangtao/acme_scratch/cori-knl/low_ne30/run/tune_model.sh
+/global/cscratch1/sd/zhangtao/acme_scratch/cori-knl/low_ne30/run/metrics/TWP/mcpi
+/global/cscratch1/sd/zhangtao/acme_scratch/cori-knl/high_twpx4v1/run/tune_model.sh
+/global/cscratch1/sd/zhangtao/acme_scratch/cori-knl/low_ne30/run/metrics/Global/mcpi
+/global/cscratch1/sd/zhangtao/acme_scratch/cori-knl/high_twpx4v1/run/metrics/score
