@@ -155,27 +155,15 @@ The metrics_tune.csh
 1. computes the climatology mean of model simulation outputs
 2. calls the "calc_metrics_tune.ncl", computes the performance score compared with obs
     - The standard deviation of variable x 
-    ![](http://latex.codecogs.com/gif.latex?\\\sigma_{x}=\sqrt{\frac{1}{N} \sum_{n=1}^{N}\left(x_{n}-\overline{x}\right)^{2}})
-    \sigma_{x}=\sqrt{\frac{1}{N} \sum_{n=1}^{N}\left(x_{n}-\overline{x}\right)^{2}}
-    
+    <img src="figs/eqs/sd.png" width = "50%" />  
     - The correlation coefficient between variable x and variable y
-    $$
-    R=\frac{\frac{1}{N} \sum_{n=1}^{N}\left(x_{n}-\overline{x}\right)\left(y_{n}-\overline{y}\right)}{\sigma_{x} \sigma_{y}}
-    $$ 
+    <img src="figs/eqs/correlation.png" width = "50%" />
     - Loss function E(m): 
-    $$
-    E(m)=\log \left[\frac{\left(\sigma_{\mathrm{obs}} / \sigma_{\mathrm{mod}}+\sigma_{\mathrm{mod}} / \sigma_{\mathrm{obs}}\right)^{2}\left(1+R_{0}\right)^{k}}{4(1+R)^{k}}\right]
-    $$
+    <img src="figs/eqs/taylor.png" width = "50%" />
     where the model simulation and observation are represented by "mod" and "obs", respectively. $R_0$ is the maximum value of the correlation coefficient (Here $R_0=1$).  k is used to control the weight of spatial correlation (Here $k=4$). The lower of E(m), the better of simulation performance. 
     - Merge multi-variable into a one-objective
-    $$
-    \chi^{2}=\frac{1}{N^{F}} \sum_{F=1}^{N^{F}}\left(\frac{E_{m}^{F}}{E_{r}^{F}}\right)^{2}
-    $$
+    <img src="figs/eqs/nomalization.png" width = "50%" />
     where $N^F$ is the number of variables, $E_m^F$ is the tuning model simulation, $E_r^F$ is the default model simulation. If $\chi < 1$, tuning simulation is better than the default simulation. The smaller of this value, the better of the tuning performance. 
-
-
-![](http://latex.codecogs.com/gif.latex?\\frac{\\partial J}{\\partial \\theta_k^{(j)}}=\\sum_{i:r(i,j)=1}{\\big((\\theta^{(j)})^Tx^{(i)}-y^{(i,j)}\\big)x_k^{(i)}}+\\lambda \\xtheta_k^{(j)})
-
 
 3. Record the parameter values and the corrsponding metrics into the MySQL database. 
 ```bash 
