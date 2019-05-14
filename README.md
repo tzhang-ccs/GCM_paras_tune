@@ -171,6 +171,12 @@ The metrics_tune.csh
     \chi^{2}=\frac{1}{N^{F}} \sum_{F=1}^{N^{F}}\left(\frac{E_{m}^{F}}{E_{r}^{F}}\right)^{2}
     $$
     where $N^F$ is the number of variables, $E_m^F$ is the tuning model simulation, $E_r^F$ is the default model simulation. If $\chi < 1$, tuning simulation is better than the default simulation. The smaller of this value, the better of the tuning performance. 
+
+The state variables for the CartPole was the following: \begin{equation} \begin{bmatrix} x & \dot{x} & \theta & \dot{\theta} & L & m & M \end{bmatrix} \end{equation}
+
+The actions alowed was choosen from the force vector: \begin{equation} \label{forces} F = \begin{bmatrix} -300 & -200 & -100 & 0 & 100 & 200 & 300 \end{bmatrix} N. \end{equation}
+
+
 3. Record the parameter values and the corrsponding metrics into the MySQL database. 
 ```bash 
 mysql uq_e3sm  -u  uq_e3sm_admin -h nerscdb04.nersc.gov -p3Ii3i3i2fdd_2s25j333jjdd < metrics.sql
