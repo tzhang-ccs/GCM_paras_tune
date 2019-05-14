@@ -1,6 +1,7 @@
 # Parameter calibartion package used in E3SM
                         Tao Zhang (slnazhangtao@gmail.com) 
                                         05/03/2019
+
 ## Where the package
 /global/homes/z/zhangtao/ACME/GCM_paras_tune/algorithms/downhill_simplex/model
 
@@ -154,9 +155,9 @@ The metrics_tune.csh
 1. computes the climatology mean of model simulation outputs
 2. calls the "calc_metrics_tune.ncl", computes the performance score compared with obs
     - The standard deviation of variable x 
-    $$
+    ![](http://latex.codecogs.com/gif.latex?\\\sigma_{x}=\sqrt{\frac{1}{N} \sum_{n=1}^{N}\left(x_{n}-\overline{x}\right)^{2}})
     \sigma_{x}=\sqrt{\frac{1}{N} \sum_{n=1}^{N}\left(x_{n}-\overline{x}\right)^{2}}
-    $$
+    
     - The correlation coefficient between variable x and variable y
     $$
     R=\frac{\frac{1}{N} \sum_{n=1}^{N}\left(x_{n}-\overline{x}\right)\left(y_{n}-\overline{y}\right)}{\sigma_{x} \sigma_{y}}
@@ -173,7 +174,7 @@ The metrics_tune.csh
     where $N^F$ is the number of variables, $E_m^F$ is the tuning model simulation, $E_r^F$ is the default model simulation. If $\chi < 1$, tuning simulation is better than the default simulation. The smaller of this value, the better of the tuning performance. 
 
 
-<img src="http://latex.codecogs.com/gif.latex?\frac{\partial J}{\partial \theta_k^{(j)}}=\sum_{i:r(i,j)=1}{\big((\theta^{(j)})^Tx^{(i)}-y^{(i,j)}\big)x_k^{(i)}}+\lambda \theta_k^{(j)}" />
+![](http://latex.codecogs.com/gif.latex?\\frac{\\partial J}{\\partial \\theta_k^{(j)}}=\\sum_{i:r(i,j)=1}{\\big((\\theta^{(j)})^Tx^{(i)}-y^{(i,j)}\\big)x_k^{(i)}}+\\lambda \\xtheta_k^{(j)})
 
 
 3. Record the parameter values and the corrsponding metrics into the MySQL database. 
