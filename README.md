@@ -6,7 +6,7 @@
 /global/homes/z/zhangtao/ACME/GCM_paras_tune/algorithms/downhill_simplex/model
 
 ## Structure of the package
-![enter image description here](http://129.49.64.130:8000/GCM_tune/pics/gcm_structure.png)
+![enter image description here](figs/gcm_structure.png)
 
 ## Configuration for downhill simplex algorithm
 File: downhill_config
